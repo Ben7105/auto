@@ -28,8 +28,6 @@ public void runOpMode(){
         RightFront.setDirection(DcMotor.Direction.REVERSE);
         RightRear .setDirection(DcMotor.Direction.REVERSE);
 
-
-
         LeftRear  .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         LeftFront .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         RightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
@@ -37,14 +35,9 @@ public void runOpMode(){
 //------------------ActaulAuto--------------------------------------------------------------------//
     waitForStart();
 
-    Drive(.25,15);
+    Drive(1,15);
 
-        /*LeftFront .setPower(.25);
-        LeftRear  .setPower(.25);
-        RightFront.setPower(.25);
-        RightRear .setPower(.25);
-        sleep(1000);
-        stop();*/
+
     }
 //----------------------Methods-------------------------------------------------------------------//
 
@@ -74,9 +67,9 @@ public void runOpMode(){
         RightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         RightRear.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-        LeftRear  .setMode(DcMotor.RunMode.RUN_USING_ENCODER);//RightOdem
-        LeftFront .setMode(DcMotor.RunMode.RUN_USING_ENCODER);//MiddleOdem
-        RightRear .setMode(DcMotor.RunMode.RUN_USING_ENCODER);//LeftOdem
+        LeftRear  .setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);//RightOdem
+        RightFront .setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);//MiddleOdem
+        RightRear .setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);//LeftOdem
 
     }
     public int ConvertInchesToRotations(double inches)
